@@ -20,6 +20,20 @@ def collatz_read(s):
     a = s.split()
     return [int(a[0]), int(a[1])]
 
+
+
+def cycle_length (n) :
+    assert n > 0
+    c = 1
+    while n > 1 :
+        if (n % 2) == 0 :
+            n = (n // 2)
+        else :
+            n = (3 * n) + 1
+        c += 1
+    assert c > 0
+    return c
+
 # ------------
 # collatz_eval
 # ------------
@@ -31,8 +45,22 @@ def collatz_eval(i, j):
     j the end       of the range, inclusive
     return the max cycle length of the range [i, j]
     """
-    # <your code>
-    return 1
+    max_cycle = 0
+    if j < i :
+        i, j = j, i
+    assert i <= j
+    assert i!=0
+    
+    for num in range(i, j+1):
+        c = cycle_length(num)
+        if (c > max_cycle):
+            max_cycle = c
+    
+    assert max_cycle > 0
+    
+    return max_cycle
+
+
 
 # -------------
 # collatz_print
