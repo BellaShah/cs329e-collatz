@@ -17,6 +17,7 @@ import sys
 # collatz_read
 # ------------
 
+cycle_cache = {}
 
 def collatz_read(s):
     """
@@ -34,10 +35,11 @@ def cycle_length (n) :
     c = 1
     while n > 1 :
         if (n % 2) == 0 :
-            n = (n // 2)
+            n = (n >> 1)
+            c += 1
         else :
-            n = (3 * n) + 1
-        c += 1
+            n += (n >> 1) + 1
+            c += 2
     assert c > 0
     return c
 
@@ -52,14 +54,24 @@ def collatz_eval(i, j):
     j the end       of the range, inclusive
     return the max cycle length of the range [i, j]
     """
+    assert i > 0
+    assert j > 0
     max_cycle = 0
+
     if j < i :
         i, j = j, i
     assert i <= j
-    assert i!=0
+
+    if i < j>>1:
+        i = j>>1
     
     for num in range(i, j+1):
-        c = cycle_length(num)
+        if num in cycle_cache:
+            c = cycle_cache[num]   
+        else:
+            c = cycle_length(num)
+            cycle_cache[num] = c
+
         if (c > max_cycle):
             max_cycle = c
     

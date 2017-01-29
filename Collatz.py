@@ -10,7 +10,7 @@
 # collatz_read
 # ------------
 
-
+cycle_cache = {}
 def collatz_read(s):
     """
     read two ints
@@ -20,17 +20,23 @@ def collatz_read(s):
     a = s.split()
     return [int(a[0]), int(a[1])]
 
-
-
 def cycle_length (n) :
     assert n > 0
     c = 1
+    current_cycle = n
     while n > 1 :
         if (n % 2) == 0 :
-            n = (n // 2)
+            n = (n >> 1)
+            c += 1
         else :
-            n = (3 * n) + 1
-        c += 1
+            n += (n >> 1) + 1
+            c += 2
+        if n < 1000000 and cache[n] != 0 :
+            c+= cache[n]
+            break
+    n = current_cycle
+    cache[n] = c 
+    
     assert c > 0
     return c
 
@@ -38,44 +44,51 @@ def cycle_length (n) :
 # collatz_eval
 # ------------
 
-
+cache = [0]*1000000
 def collatz_eval(i, j):
     """
     i the beginning of the range, inclusive
     j the end       of the range, inclusive
     return the max cycle length of the range [i, j]
     """
+    assert i > 0
+    assert j > 0
     max_cycle = 0
+    current_cycle = 0
+
     if j < i :
         i, j = j, i
     assert i <= j
-    assert i!=0
+
+    if i < j>>1:
+        i = j>>1
     
     for num in range(i, j+1):
-        c = cycle_length(num)
-        if (c > max_cycle):
-            max_cycle = c
+        current_cycle = 0
+        if cache[num] != 0:
+            current_cycle = cache[num]   
+        else:
+            current_cycle = cycle_length(num)
+            if (current_cycle > max_cycle):
+                max_cycle = current_cycle
     
     assert max_cycle > 0
-    
     return max_cycle
-
-
 
 # -------------
 # collatz_print
 # -------------
 
-
-def collatz_print(w, i, j, v):
+def collatz_print (w, i, j, v) :
     """
     print three ints
-    w a writer
-    i the beginning of the range, inclusive
-    j the end       of the range, inclusive
-    v the max cycle length
+    w is a writer
+    i is the beginning of the range, inclusive
+    j is the end       of the range, inclusive
+    v is the max cycle length
     """
-    w.write(str(i) + " " + str(j) + " " + str(v) + "\n")
+    w.write(str(i) + " " + str(j) + " " + str(v) + "\n")    
+
 
 # -------------
 # collatz_solve
