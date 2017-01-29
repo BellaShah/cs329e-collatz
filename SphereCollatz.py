@@ -17,8 +17,6 @@ import sys
 # collatz_read
 # ------------
 
-cycle_cache = {}
-
 def collatz_read(s):
     """
     read two ints
@@ -28,26 +26,12 @@ def collatz_read(s):
     a = s.split()
     return [int(a[0]), int(a[1])]
 
-
-
-def cycle_length (n) :
-    assert n > 0
-    c = 1
-    while n > 1 :
-        if (n % 2) == 0 :
-            n = (n >> 1)
-            c += 1
-        else :
-            n += (n >> 1) + 1
-            c += 2
-    assert c > 0
-    return c
-
 # ------------
 # collatz_eval
 # ------------
 
 
+cache = [0]*1000001
 def collatz_eval(i, j):
     """
     i the beginning of the range, inclusive
@@ -56,29 +40,43 @@ def collatz_eval(i, j):
     """
     assert i > 0
     assert j > 0
+    
     max_cycle = 0
+    current_cycle = 0
+    cache[1] = 1
 
     if j < i :
         i, j = j, i
     assert i <= j
 
-    if i < j>>1:
-        i = j>>1
-    
-    for num in range(i, j+1):
-        if num in cycle_cache:
-            c = cycle_cache[num]   
-        else:
-            c = cycle_length(num)
-            cycle_cache[num] = c
+    if i < j >> 1:
+        i = j >> 1
 
-        if (c > max_cycle):
-            max_cycle = c
+    for num in range(i, j+1):
+        current_cycle = 0
+        orig_num = num
+        if (cache[num] != 0):
+            current_cycle = cache[num]   
+        else:
+            while num > 1:
+                if (num % 2 == 0):
+                    num >>= 1
+                    current_cycle += 1
+                else:
+                    num += (num >> 1) + 1
+                    current_cycle += 2
+
+                if (num <= 1000000 and cache[num]!= 0):
+                    current_cycle = current_cycle + cache[num]
+                    break
+
+            cache[orig_num] = current_cycle
+
+        if current_cycle > max_cycle:
+            max_cycle = current_cycle
     
     assert max_cycle > 0
-    
     return max_cycle
-
 
 
 # -------------

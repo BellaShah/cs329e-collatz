@@ -20,31 +20,11 @@ def collatz_read(s):
     a = s.split()
     return [int(a[0]), int(a[1])]
 
-def cycle_length (n) :
-    assert n > 0
-    c = 1
-    current_cycle = n
-    while n > 1 :
-        if (n % 2) == 0 :
-            n = (n >> 1)
-            c += 1
-        else :
-            n += (n >> 1) + 1
-            c += 2
-        if n < 1000000 and cache[n] != 0 :
-            c+= cache[n]
-            break
-    n = current_cycle
-    cache[n] = c 
-    
-    assert c > 0
-    return c
-
 # ------------
 # collatz_eval
 # ------------
 
-cache = [0]*1000000
+cache = [0]*1000001
 def collatz_eval(i, j):
     """
     i the beginning of the range, inclusive
@@ -53,24 +33,40 @@ def collatz_eval(i, j):
     """
     assert i > 0
     assert j > 0
+    
     max_cycle = 0
     current_cycle = 0
+    cache[1] = 1
 
     if j < i :
         i, j = j, i
     assert i <= j
 
-    if i < j>>1:
-        i = j>>1
-    
+    if i < j >> 1:
+        i = j >> 1
+
     for num in range(i, j+1):
         current_cycle = 0
-        if cache[num] != 0:
+        orig_num = num
+        if (cache[num] != 0):
             current_cycle = cache[num]   
         else:
-            current_cycle = cycle_length(num)
-            if (current_cycle > max_cycle):
-                max_cycle = current_cycle
+            while num > 1:
+                if (num % 2 == 0):
+                    num >>= 1
+                    current_cycle += 1
+                else:
+                    num += (num >> 1) + 1
+                    current_cycle += 2
+
+                if (num <= 1000000 and cache[num]!= 0):
+                    current_cycle = current_cycle + cache[num]
+                    break
+
+            cache[orig_num] = current_cycle
+
+        if current_cycle > max_cycle:
+            max_cycle = current_cycle
     
     assert max_cycle > 0
     return max_cycle
@@ -101,6 +97,8 @@ def collatz_solve(r, w):
     w a writer
     """
     for s in r:
+        if not s.strip():
+            continue
         i, j = collatz_read(s)
         v = collatz_eval(i, j)
         collatz_print(w, i, j, v)
