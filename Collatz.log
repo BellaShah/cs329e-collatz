@@ -1,0 +1,131 @@
+commit 8e80754ba47621141711edcbd730f71af38035da
+Author: Bella Shah <bellashah@wireless-10-148-214-180.public.utexas.edu>
+Date:   Tue Jan 31 11:07:57 2017 -0600
+
+    Ran pydoc3 and autopep8
+
+commit 8dd50df8f96fa47c04d48fdc9ebd6d7f0ecaee46
+Author: Bella Shah <bellashah@wireless-10-148-214-180.public.utexas.edu>
+Date:   Tue Jan 31 10:12:10 2017 -0600
+
+    Added new line to RunCollatz txt files
+
+commit 4a01f709443b87b9567a6d76e45d56d70d70df75
+Author: Bella Shah <bellashah@wireless-10-148-214-180.public.utexas.edu>
+Date:   Tue Jan 31 09:59:47 2017 -0600
+
+    Updated RunCollatz.in & RunCollatz.out
+    
+    Created 100-200 acceptance test in RunCollatz.in & RunCollatz.out
+    
+    Close #9
+
+commit e52c4b480e2f4e53072d2ccdb9c6f25bea393fd0
+Author: Bella Shah <bellashah@wireless-10-148-214-180.public.utexas.edu>
+Date:   Tue Jan 31 09:47:26 2017 -0600
+
+    Fixed Collatz.py & SphereCollatz.py
+    
+    Close #15
+    Close #7
+
+commit ae3417e51b9d03bd4cfeb33ddd1d4977ddaa0760
+Author: Bella Shah <bellashah@wireless-10-148-214-180.public.utexas.edu>
+Date:   Sun Jan 29 15:56:07 2017 -0600
+
+    SphereCollatz.py accepted
+    
+    Close #14 Optimized SphereCollatz.py to reduce run time
+
+commit 5d4cf44f63c858c51eb098fcbd083e8888c8bcab
+Author: Bella Shah <bellashah@wireless-10-148-214-180.public.utexas.edu>
+Date:   Sun Jan 29 12:34:46 2017 -0600
+
+    Collatz still not being accepted by Sphere
+
+commit 0ed02ebd6bef06b04449c6ddac1a915eb84a86ef
+Author: Bella Shah <bellashah@wireless-10-148-214-180.public.utexas.edu>
+Date:   Fri Jan 27 20:54:30 2017 -0600
+
+    Created SphereCollatz.py
+    
+    Created SphereCollatz.py and received “time exceeded error” on Sphere.
+    Still need to optimize
+
+commit 3f9df00165d77df827687b791514f00fed5dd7a8
+Author: Bella Shah <bellashah@wireless-10-148-214-180.public.utexas.edu>
+Date:   Fri Jan 27 20:15:14 2017 -0600
+
+    Coverage 100%
+    
+    I fixed the test cases in TestCollatz.py and ran coverage-3.5 with 100%
+    coverage. Close #6
+
+commit 2b793bc0cf04cccb10ba2192fdad646122457619
+Author: Bella Shah <bellashah@wireless-10-147-151-120.public.utexas.edu>
+Date:   Fri Jan 27 19:02:33 2017 -0600
+
+    Ran RunCollatz.py
+    
+    Used command:
+    % python3.5 RunCollatz.py < RunCollatz.in > RunCollatz.out
+    % cat RunCollatz.out
+    
+    to output correct max cycle length
+
+commit 3de3cee59bc7b85512de7b059aaa295a54278596
+Author: Bella Shah <bellashah@wireless-10-147-151-120.public.utexas.edu>
+Date:   Fri Jan 27 17:53:31 2017 -0600
+
+    Fixed TestCollatz.py
+
+commit 4219a73698047cd7bad9633103af8f893a98115f
+Author: Bella Shah <bellashah@wireless-10-148-214-180.public.utexas.edu>
+Date:   Fri Jan 27 17:01:53 2017 -0600
+
+    Fixed Collatz.py & TestCollatz.py
+    
+    Fixed Units Tests and TestCollatz.py runs successfully while outputting
+    correct values.
+    
+    Close #5
+
+commit a1de88026ae205216915b085c063d942165fd63a
+Author: BellaShah <bellagithub@gmail.com>
+Date:   Thu Jan 26 13:30:02 2017 -0600
+
+    Update .travis.yml
+    
+    Added - make test back
+
+commit b2f4f2ddada3f88227b4a6355b03e0613a80c91c
+Author: Bella Shah <bellashah@wireless-10-148-214-180.public.utexas.edu>
+Date:   Tue Jan 24 22:35:27 2017 -0600
+
+    Close #4
+    Copied files from Fraij’s repo into private repo
+
+commit 653101beea38309bc2dbca0bbba6c212e53dfb41
+Merge: ec6f93f cc55264
+Author: Bella Shah <bellashah@wireless-10-148-214-180.public.utexas.edu>
+Date:   Tue Jan 24 22:05:47 2017 -0600
+
+    Merge branch 'collatz-dev'
+
+commit cc552642885ecef98cd04df0cd25e91a4e36482b
+Author: BellaShah <bellagithub@gmail.com>
+Date:   Tue Jan 24 21:36:04 2017 -0600
+
+    Update .travis.yml
+
+commit a22061d5600c90db84856be9b9308ce44b3c20c5
+Author: BellaShah <bellagithub@gmail.com>
+Date:   Tue Jan 24 21:11:10 2017 -0600
+
+    Made .travis.yml file
+
+commit ec6f93fc3ce4688a2552d6169fe0f56a04446bcf
+Author: BellaShah <bellagithub@gmail.com>
+Date:   Tue Jan 24 17:54:41 2017 -0600
+
+    Create README.md
