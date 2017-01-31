@@ -10,7 +10,6 @@
 # collatz_read
 # ------------
 
-cycle_cache = {}
 def collatz_read(s):
     """
     read two ints
@@ -62,8 +61,7 @@ def collatz_eval(i, j):
                 if (num <= 1000000 and cache[num]!= 0):
                     current_cycle = current_cycle + cache[num]
                     break
-
-            cache[orig_num] = current_cycle
+        cache[orig_num] = current_cycle
 
         if current_cycle > max_cycle:
             max_cycle = current_cycle
