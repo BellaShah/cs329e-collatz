@@ -12,12 +12,12 @@
 
 import sys
 
+cache = [0]*1000001
 
 # ------------
 # collatz_read
 # ------------
 
-cycle_cache = {}
 
 def collatz_read(s):
     """
@@ -48,7 +48,6 @@ def cycle_length (n) :
 # ------------
 
 
-cache = [0]*1000001
 def collatz_eval(i, j):
     """
     i the beginning of the range, inclusive

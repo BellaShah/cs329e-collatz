@@ -5,12 +5,12 @@
 # Copyright (C) 2016
 # Glenn P. Downing
 # ---------------------------
-#import math , sys
+
+cache = [0] * 1000001
+
 # ------------
 # collatz_read
 # ------------
-
-cache = [0] * 1000001
 
 
 def collatz_read(s):
