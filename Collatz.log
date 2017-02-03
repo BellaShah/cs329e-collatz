@@ -1,3 +1,101 @@
+commit 6233cb069f7d70e45e94f6f6e8dade23e426f43d
+Author: Bella Shah <bellashah@Bellas-MacBook-Pro.local>
+Date:   Thu Feb 2 19:20:41 2017 -0600
+
+    Cleaned up files
+
+commit e776b062ec8964503d805ba85483efc997ab3357
+Author: BellaShah <bellagithub@gmail.com>
+Date:   Thu Feb 2 18:54:04 2017 -0600
+
+    Update README.md
+
+commit da741176be2902eb91090aaea32a27b6a782e9f2
+Author: BellaShah <bellagithub@gmail.com>
+Date:   Wed Feb 1 23:19:45 2017 -0600
+
+    Update .gitignore
+
+commit 1769ce90f00933e44741b51640e7b10ad16a5919
+Author: BellaShah <bellagithub@gmail.com>
+Date:   Wed Feb 1 22:57:11 2017 -0600
+
+    Create .gitignore
+
+commit bc59c9b3f910b5817e8b96391c7a09b4cc1c4375
+Author: BellaShah <bellagithub@gmail.com>
+Date:   Wed Feb 1 22:12:15 2017 -0600
+
+    Delete profile.out
+
+commit b52239f122a4fdb4d3d254d41ccea11adf68806e
+Author: BellaShah <bellagithub@gmail.com>
+Date:   Wed Feb 1 22:12:07 2017 -0600
+
+    Delete Collatz.cpython-35.pyc
+
+commit 996f250ace5d69e77ca326ced3a0d906f0ef376e
+Author: BellaShah <bellagithub@gmail.com>
+Date:   Wed Feb 1 22:11:36 2017 -0600
+
+    Delete TestGenerator.py
+
+commit 7df6f37bb9fe53811e06e6a9aafb5a869838c881
+Author: BellaShah <bellagithub@gmail.com>
+Date:   Wed Feb 1 22:11:21 2017 -0600
+
+    Delete Collatz.pyc
+
+commit ec09a01efb9438b720efeeca53fe7e10bda626a0
+Author: BellaShah <bellagithub@gmail.com>
+Date:   Wed Feb 1 22:10:11 2017 -0600
+
+    Delete .coverage
+
+commit 78b0ba15d1ca93ba5894d2a0863a18b1132af39f
+Author: Bella Shah <bellashah@wireless-10-148-214-180.public.utexas.edu>
+Date:   Wed Feb 1 22:09:24 2017 -0600
+
+    Updated Collatz.html
+
+commit abc535f2dcc774b2c203021ac17f461f4a18982a
+Author: Bella Shah <bellashah@wireless-10-146-219-227.public.utexas.edu>
+Date:   Wed Feb 1 12:53:59 2017 -0600
+
+    Removed blank line
+
+commit 95aa3cd6b948ff72b2a93859836185678127d48d
+Author: Bella Shah <bellashah@wireless-10-148-214-180.public.utexas.edu>
+Date:   Wed Feb 1 00:39:57 2017 -0600
+
+    Fixed RunCollatz.out file
+
+commit 35ca12f6f19ba5b4e82cf6e4ffd123d2de649754
+Author: BellaShah <bellagithub@gmail.com>
+Date:   Wed Feb 1 00:34:56 2017 -0600
+
+    Update README.md
+
+commit f5c0b837ceee26ab3f562dfd5e943de0d858d49b
+Author: Bella Shah <bellashah@wireless-10-148-214-180.public.utexas.edu>
+Date:   Wed Feb 1 00:27:42 2017 -0600
+
+    Added test case
+    
+    Added Blank line test case and ran coverage again
+
+commit f40e212aef50e26f435e73144d06f567da7a3a90
+Author: Bella Shah <bellashah@wireless-10-148-214-180.public.utexas.edu>
+Date:   Tue Jan 31 11:22:19 2017 -0600
+
+    Edited RunCollatz.out
+
+commit 835f971989ac171d9dffa9b41fb786b3a8efecb1
+Author: Bella Shah <bellashah@wireless-10-148-214-180.public.utexas.edu>
+Date:   Tue Jan 31 11:18:49 2017 -0600
+
+    Edited RunCollatz.out
+
 commit 8e80754ba47621141711edcbd730f71af38035da
 Author: Bella Shah <bellashah@wireless-10-148-214-180.public.utexas.edu>
 Date:   Tue Jan 31 11:07:57 2017 -0600
